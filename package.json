@@ -1,0 +1,10 @@
+{
+    "name":"node-cms",
+    "version":"0.0.1",
+    "dependencies":{
+        "express":"",
+        "redis":"",
+        "ejs":"",
+        "socket.io":""
+    }
+}

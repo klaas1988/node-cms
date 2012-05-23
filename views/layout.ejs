@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Node CMS</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+
+        <link rel="icon" href="favicon.ico" />
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+        <script type="text/javascript" src="main.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://node-cms.cloudfoundry.com:80');
+            socket.on('pageview', function(data) {
+                document.getElementsByTagName('p')[0].textContent = data.count;
+                //socket.emit('my other event', {my: 'data'});
+            });
+        </script>
+    </head>
+    <body>
+        <p><%= count %></p>
+    </body>
+</html>
